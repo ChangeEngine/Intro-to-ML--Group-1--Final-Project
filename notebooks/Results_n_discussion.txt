@@ -1,0 +1,7 @@
+We first implemented a simple multinomial logistic regression baseline on flattened MNIST images (784 features). 
+This model reached about 91–92% accuracy and macro F1 on the held-out test set. 
+The confusion matrix showed a mostly diagonal pattern, but some classes (especially 5 and 8) had noticeably more errors.
+Next, we trained a one-hidden-layer MLP with 256 ReLU units using the same features. 
+With early stopping, the MLP achieved around 97–98% accuracy and macro F1 on both validation and test sets, which is a clear improvement of roughly +6 percentage points compared to the baseline. 
+The test-set confusion matrix for the MLP is almost perfectly diagonal, confirming that the neural network reduces misclassifications across all digits, not only for one or two classes.
+In the error analysis, most of the remaining mistakes were visually ambiguous digits (for example, 5 vs 3/8 or 9 vs 4), which suggests that the model is close to the limit of what is possible from raw 28×28 images without more advanced architectures or data augmentation.
