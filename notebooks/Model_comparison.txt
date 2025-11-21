@@ -4,3 +4,9 @@
 |--------------------------|--------------------|-------------:|-------------:|--------------:|--------------:|
 | Logistic Regression      | 784 raw pixels     | 0.912        | 0.911        | 0.916         | 0.915         |
 | MLP (1×256 ReLU layer)   | 784 raw pixels     | 0.972        | 0.972        | 0.974         | 0.974         |
+
+
+The logistic regression baseline reached about 91–92% accuracy and macro F1 on the MNIST test set. 
+After that, we trained a simple MLP with one hidden layer of 256 ReLU units on the same flattened 28×28 pixel features. 
+The MLP improved performance to about 97–98% accuracy and macro F1, which is roughly a +6 percentage point gain over the baseline. 
+This confirms that a non-linear neural network can model the digit shapes much better than a purely linear classifier, even when using the same raw pixel features.
