@@ -1,0 +1,6 @@
+### Model comparison
+
+| Model                     | Features           | Val Accuracy | Val Macro F1 | Test Accuracy | Test Macro F1 |
+|--------------------------|--------------------|-------------:|-------------:|--------------:|--------------:|
+| Logistic Regression      | 784 raw pixels     | 0.912        | 0.911        | 0.916         | 0.915         |
+| MLP (1×256 ReLU layer)   | 784 raw pixels     | 0.972        | 0.972        | 0.974         | 0.974         |
