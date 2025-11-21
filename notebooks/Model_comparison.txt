@@ -1,12 +1,11 @@
 ### Model comparison
 
-| Model                     | Features           | Val Accuracy | Val Macro F1 | Test Accuracy | Test Macro F1 |
-|--------------------------|--------------------|-------------:|-------------:|--------------:|--------------:|
-| Logistic Regression      | 784 raw pixels     | 0.912        | 0.911        | 0.916         | 0.915         |
-| MLP (1×256 ReLU layer)   | 784 raw pixels     | 0.972        | 0.972        | 0.974         | 0.974         |
+| Model                     | Features           | Test Accuracy | Test Macro F1 |
+|--------------------------|--------------------|--------------:|--------------:|
+| Logistic Regression      | 784 raw pixels     | 0.916         | 0.915         |
+| MLP (1×256 ReLU)         | 784 raw pixels     | 0.9739        | 0.9737        |
+| CNN (2 conv + 1 dense)   | 28×28 images (1ch) | 0.9893        | 0.9892        |
 
 
-The logistic regression baseline reached about 91–92% accuracy and macro F1 on the MNIST test set. 
-After that, we trained a simple MLP with one hidden layer of 256 ReLU units on the same flattened 28×28 pixel features. 
-The MLP improved performance to about 97–98% accuracy and macro F1, which is roughly a +6 percentage point gain over the baseline. 
-This confirms that a non-linear neural network can model the digit shapes much better than a purely linear classifier, even when using the same raw pixel features.
+Starting from a multinomial logistic regression baseline we achieved about 91–92% test accuracy and macro F1. Replacing the linear model with a one-hidden-layer MLP increased performance to around 97–98%, showing that non-linear features already help a lot on MNIST. Finally, using a small CNN that works directly on the 28×28 images pushed performance further to about 98.9% accuracy and macro F1. The CNN’s confusion matrix is almost perfectly diagonal, which means it makes very few mistakes and handles all digit classes consistently better than the previous models.
+
