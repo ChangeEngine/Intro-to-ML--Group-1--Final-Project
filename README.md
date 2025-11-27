@@ -42,7 +42,6 @@ All metrics are on the **10k MNIST test set**. Accuracy and F1 are macro-average
 | MLP (1 hidden layer, tuned)           | 784 raw pixels     | ~0.964        | ~0.964        |
 | CNN (2 conv + 1 dense, manually tuned)| 28×28 images (1ch) | ~0.989        | ~0.989        |
 
-### High-level story
 
 We start from a multinomial logistic regression baseline at about **90–91%** test accuracy and macro F1.  
 Switching to **k-Nearest Neighbors** on the same flattened pixels increases performance to around **94%**.  
