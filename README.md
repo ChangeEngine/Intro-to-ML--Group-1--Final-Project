@@ -14,9 +14,9 @@ also include an additional notebook-based study in `gen_ai_study/` for extra exp
 
 - `data/` – Original MNIST `.gz` files (train/test images + labels).
 - `azure/`
-  - `reports/report.docx` – Final project report (editable).
-  - `reports/report.pdf` – Final project report (submitted version).
-  - (Optional) extra screenshots/exports from Azure ML (pipelines, metrics, etc.).
+  - `report.docx` – Final project report (editable).
+  - `report.pdf` – Final project report (pdf version).
+  - `/reports`extra screenshots/exports from Azure ML (pipelines, metrics, etc.).
 - `gen_ai_study/`
   - Separate mini-project with Jupyter notebooks (baseline, kNN, MLP, CNN, etc.).
   - Has its **own** `README.md` describing the notebook workflow and results.
