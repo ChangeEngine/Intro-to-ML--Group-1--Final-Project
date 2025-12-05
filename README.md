@@ -96,7 +96,7 @@ separate `README.md` with more details, usage instructions and metrics.
 This will read the .gz files and produce a single cleaned dataset file
 (e.g., mnist_clean.parquet or similar), ready to upload into Azure ML.
 
-3.2 Azure ML Designer
+### 3.2 Azure ML Designer
 
 In Azure ML Studio, create a new Designer pipeline.
 
@@ -110,7 +110,7 @@ and Evaluate Model as shown in the report screenshots.
 Run the pipeline. When finished, use Evaluate Model to view metrics and
 download confusion matrices.
 
-3.3 Notebook experiments (gen_ai_study/)
+### 3.3 Notebook experiments (gen_ai_study/)
 
 Open gen_ai_study/README.md for detailed instructions.
 
