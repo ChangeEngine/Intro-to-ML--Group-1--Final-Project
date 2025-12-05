@@ -93,3 +93,54 @@ separate `README.md` with more details, usage instructions and metrics.
 
    ```bash
    python data_preparation.py
+This will read the .gz files and produce a single cleaned dataset file
+(e.g., mnist_clean.parquet or similar), ready to upload into Azure ML.
+
+3.2 Azure ML Designer
+
+In Azure ML Studio, create a new Designer pipeline.
+
+Register the cleaned MNIST dataset and drop it into the canvas.
+
+Connect it to the data prep Python script module used in the report.
+
+Add the four classification models, Tune Model Hyperparameters, Score Model
+and Evaluate Model as shown in the report screenshots.
+
+Run the pipeline. When finished, use Evaluate Model to view metrics and
+download confusion matrices.
+
+3.3 Notebook experiments (gen_ai_study/)
+
+Open gen_ai_study/README.md for detailed instructions.
+
+Each notebook expects MNIST files under gen_ai_study/data/ (or adjust paths).
+
+Run cells from top to bottom to reproduce the baseline, kNN, MLP and CNN experiments.
+
+## 4. Models and key results (test set, Azure Designer)
+
+All metrics below are measured on the 10k MNIST test set using the normalized features
+from the Azure pipeline. Values are approximate and can be refined from the latest runs.
+
+| Model                     | Platform      | Features       | Test Accuracy |
+| ------------------------- | ------------- | -------------- | ------------: |
+| Logistic Regression       | Designer      | 784 raw pixels |         ~0.93 |
+| Decision Forest           | Designer      | 784 raw pixels |         ~0.97 |
+| Boosted Decision Tree     | Designer      | 784 raw pixels |         ~0.98 |
+| Multiclass Neural Network | Designer      | 784 raw pixels |         ~0.97 |
+| k-Nearest Neighbours      | Python script | 784 raw pixels |         ~0.97 |
+| Convolutional Neural Net  | Python script | 28×28 images   |    ~0.96–0.97 |
+
+
+In our final comparison, the Multiclass Boosted Decision Tree achieves the best overall
+accuracy, with very strong precision/recall and a confusion matrix that is almost perfectly
+diagonal. The MLP and kNN are close behind, while logistic regression serves as a useful
+linear baseline.
+
+More detailed tables, confusion matrices and discussion are available in
+azure/reports/report.pdf.
+
+## 5. License / usage
+This repository is created for educational purposes as part of the AIGC-5102 course.
+Feel free to browse, clone, or adapt the code for learning and experimentation.
